@@ -1,0 +1,232 @@
+/* 
+   Custom Premium Styles for Courier & Parcel Tracking System
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --danger-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    --dark-gradient: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.12);
+}
+
+/* Dashboard Summary Cards */
+.stat-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: none;
+}
+.stat-card:hover {
+    transform: scale(1.03);
+}
+.stat-card .card-body {
+    padding: 1.5rem;
+    z-index: 2;
+    position: relative;
+}
+.stat-card-icon {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    font-size: 5rem;
+    opacity: 0.15;
+    transform: rotate(-15deg);
+}
+
+.bg-stat-total { background: linear-gradient(135deg, #6366f1, #3b82f6); }
+.bg-stat-pending { background: linear-gradient(135deg, #f59e0b, #f97316); }
+.bg-stat-assigned { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.bg-stat-intransit { background: linear-gradient(135deg, #a855f7, #8b5cf6); }
+.bg-stat-delivered { background: linear-gradient(135deg, #10b981, #059669); }
+
+/* Navigation & Sidebar */
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sidebar {
+    background: white;
+    border-right: 1px solid #e5e7eb;
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar .nav-link {
+    color: #4b5563;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    margin: 0.2rem 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
+}
+
+/* Tracking Stepper/Timeline */
+.tracking-stepper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.tracking-stepper::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    bottom: 5px;
+    width: 3px;
+    background-color: #e5e7eb;
+}
+
+.step-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.step-item:last-child {
+    padding-bottom: 0;
+}
+
+.step-badge {
+    position: absolute;
+    left: -33px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.step-item.active .step-badge {
+    background: var(--primary-gradient);
+    box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.2);
+}
+
+.step-item.completed .step-badge {
+    background: var(--success-gradient);
+}
+
+.step-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.step-date {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Color Coded Status Badges */
+.status-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35em 0.8em;
+    border-radius: 2rem;
+    display: inline-block;
+}
+
+.badge-pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.badge-assigned {
+    background-color: #ecfeff;
+    color: #0891b2;
+}
+
+.badge-pickedup {
+    background-color: #f3e8ff;
+    color: #7c3aed;
+}
+
+.badge-intransit {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.badge-delivered {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: var(--success-gradient);
+    border: none;
+}
+
+/* Forms */
+.form-control:focus, .form-select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Footer position */
+footer {
+    margin-top: auto;
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+}
