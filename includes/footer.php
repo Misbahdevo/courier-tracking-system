@@ -3,7 +3,7 @@
     <footer class="py-4 bg-white border-top mt-auto">
         <div class="container text-center">
             <p class="mb-1 text-muted">&copy; <?php echo date('Y'); ?> SwiftPost Courier Services. All rights reserved.</p>
-            <small class="text-muted">Built with Core PHP & MySQL. Double-check your local database settings in config.php.</small>
+            <small class="text-muted">Built with Core PHP & MySQL. </small>
         </div>
     </footer>
 
